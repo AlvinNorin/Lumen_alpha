@@ -38,6 +38,7 @@ public class Text {
 		int y = 0;
 		Color co = Color.white;
 		for (char c : text.toCharArray()) {
+			lx += size;
 			/*if (c == ' ') {
 				drawChar(32, x+lx, y, size, size, co);
 			}
@@ -399,7 +400,7 @@ public class Text {
 			if (c == 'Z') {
 				drawChar(90, x+lx, y, size, size, co);
 			}*/
-			drawChar(c, x+8, y, size, size, co);
+			drawChar(c, x+lx, y, size, size, co);
 		}
 		lx=0;
 	}
@@ -483,15 +484,187 @@ public class Text {
 		}
 	}
 	public static void drawChar(char id, int x, int y, int width, int height, Color c) {
-		int x2, y2 = 0;
+		System.out.println("Drawing char \'" + id + "\' with ACSII number, " + (int)id);
+		int x2 = 0, y2 = 0;
+		int xv = 15, yv = 0;
 		float px1 = 0.0625f, py1 = 0.9375f, px2 = 0.125f, py2 = 1f;
 		if ((int) id < 16) {
-			py1 = 1/16*15;
-			py2 = 1/16*16;
-			if ((int) id == 0) px1 = 1/16*0;
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
 		}
-		px2 = px1+(1/16);
-		
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 16 && (int) id <= 31) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 32 && (int) id <= 47) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 48 && (int) id <= 63) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 64 && (int) id <= 79) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 80 && (int) id <= 95) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 96 && (int) id <= 111) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		xv -= 1;
+		yv += 16;
+		if ((int) id >= 112 && (int) id <= 127) {
+			py1 = (float) (0.0625*xv);
+			py2 = (float) (0.0625*(xv+1));
+			if ((int) id == yv+0) px1 = (float) (0.0625*0);
+			if ((int) id == yv+1) px1 = (float) (0.0625*1);
+			if ((int) id == yv+2) px1 = (float) (0.0625*2);
+			if ((int) id == yv+3) px1 = (float) (0.0625*3);
+			if ((int) id == yv+4) px1 = (float) (0.06251*4);
+			if ((int) id == yv+5) px1 = (float) (0.06251*5);
+			if ((int) id == yv+6) px1 = (float) (0.06251*6);
+			if ((int) id == yv+7) px1 = (float) (0.06251*7);
+			if ((int) id == yv+8) px1 = (float) (0.06251*8);
+			if ((int) id == yv+9) px1 = (float) (0.0625*9);
+			if ((int) id == yv+10) px1 = (float) (0.0625*10);
+			if ((int) id == yv+11) px1 = (float) (0.0625*11);
+			if ((int) id == yv+12) px1 = (float) (0.0625*12);
+			if ((int) id == yv+13) px1 = (float) (0.0625*13);
+			if ((int) id == yv+14) px1 = (float) (0.0625*14);
+			if ((int) id == yv+15) px1 = (float) (0.0625*15);
+		}
+		px2 = (float) (px1+0.0625);
+		//px1 = 0.0625f; py1 = 0.9375f; px2 = 0.125f; py2 = 1f;
+		//System.out.println((String)(px1 + ", " + py1 + ", " + px2 + ", " + py2));
 		float xc11 = (float) px1;
 		float yc11 = (float) py1;
 		float xc21 = (float) px2;
@@ -504,16 +677,12 @@ public class Text {
 		float yc22 = (float) py2;
 		float xc32 = (float) px2;
 		float yc32 = (float) py1;
-		
-		if (chars[id] == null) {
-			x2 = 16;
-			y2 = 16;
-			lx = 16;
-		}else{
-			x2 = chars[id].getImageWidth()*width;
-			y2 = chars[id].getImageHeight()*height;
-			lx += chars[id].getImageWidth()*width;
-		}
+			//x2 = chars[id].getImageWidth()*width;
+			x2 = width;
+			//y2 = chars[id].getImageHeight()*height;
+			y2 = height;
+			lx += width;
+			//lx += width;
 		GUI.Texture.find("font_default").bind();
 		c.bind();
 		GL11.glBegin(GL11.GL_POLYGON);

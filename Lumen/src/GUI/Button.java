@@ -67,7 +67,7 @@ public class Button {
 			count_y++;
 		}
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-		game.Text.draw(text, x+(block_size*size_x/2)-(game.Text.lenght(text, font_size)/2), y+(block_size*size_y/2)-(8*font_size/2), font_size, Color.white);
+		game.Text.draw(text, x+((block_size*size_x/2)-(game.Text.lenght(text, font_size)/2))/2, y+(block_size*size_y/2)-(font_size/2), font_size, Color.white);
 		/**
 		 * Add or keep button in memory
 		*/

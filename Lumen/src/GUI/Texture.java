@@ -71,4 +71,38 @@ public class Texture {
 	    	GL11.glVertex2f(x2, y);
 		GL11.glEnd();
 	}
+	
+	public static void drawAdvanced(int x1, int y1, int x2, int y2, String tex, float texcorx1, float texcory1, float texcorx2, float texcory2, Color c) {
+		float px1 = texcorx1, py1 = texcory1, px2 = texcorx2, py2 = texcory2;
+		float xc11 = (float) px1;
+		float yc11 = (float) py1;
+		float xc21 = (float) px2;
+		float yc21 = (float) py1;
+		float xc31 = (float) px1;
+		float yc31 = (float) py2;
+		float xc12 = (float) px2;
+		float yc12 = (float) py2;
+		float xc22 = (float) px1;
+		float yc22 = (float) py2;
+		float xc32 = (float) px2;
+		float yc32 = (float) py1;
+		GUI.Texture.find(tex).bind();
+		c.bind();
+		GL11.glBegin(GL11.GL_POLYGON);
+			GL11.glTexCoord2f(xc11, yc11);
+			GL11.glVertex2f(x1, y1);
+			GL11.glTexCoord2f(xc21, yc21);
+			GL11.glVertex2f(x2, y1);
+			GL11.glTexCoord2f(xc31, yc31);
+			GL11.glVertex2f(x1, y2);
+		GL11.glEnd();
+		GL11.glBegin(GL11.GL_POLYGON);
+			GL11.glTexCoord2f(xc12, yc12);
+			GL11.glVertex2f(x2, y2);
+			GL11.glTexCoord2f(xc22, yc22);
+			GL11.glVertex2f(x1, y2);
+			GL11.glTexCoord2f(xc32, yc32);
+			GL11.glVertex2f(x2, y1);
+		GL11.glEnd();
+	}
 }

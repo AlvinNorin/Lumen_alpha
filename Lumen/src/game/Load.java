@@ -59,6 +59,7 @@ public class Load {
 		GUI.Texture.load("door1", "PNG", "res/textures/door1.png");
 		GUI.Texture.load("font_default", "PNG", "res/font/default.png");
 		GUI.Texture.load("vector", "PNG", "res/vector.png");
+		GUI.Texture.load("gui_gui", "PNG", "res/textures/gui/gui.png");
 		//GUI.Texture.load("mojang", "PNG", "res/textures/mojang.png");
 		//GUI.Texture.load("redstone_lamp_off", "PNG", "res/textures/redstone_lamp_off.png");
 		//GUI.Texture.load("redstone_lamp_on", "PNG", "res/textures/redstone_lamp_on.png");

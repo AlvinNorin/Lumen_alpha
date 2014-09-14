@@ -39,11 +39,11 @@ public class Main {
 		if (!menu.Multiplayer.connected) {
 			GUI.Background.draw("dirt");
 			if (menu.Multiplayer.connection_path == 0) {
-				GUI.Button.draw("INFO", "CONNECTING TO " + singleplayer.server.address, Display.getWidth()/2-64 * 4, Display.getHeight()/2 - 246, 4, 1, "stonebrick", 3, 128);
+				GUI.Button.draw("INFO", "CONNECTING TO " + singleplayer.server.address, Display.getWidth()/2-64 * 4, Display.getHeight()/2 - 246, 6, 1, "stonebrick", 16, 128);
 				if (menu.Multiplayer.connection_init) {
 					try {
 						System.out.println("[INFO]: Connecting to " + singleplayer.server.address);
-						singleplayer.server.sendGet("http://" + server.address + "/index.php?field0=GET&&field1=player.online");
+						client.Main.main("request");
 						load = true;
 						System.out.println("[INFO]: Connected to to " + singleplayer.server.address);
 					} catch (Exception e) {
@@ -54,8 +54,8 @@ public class Main {
 			}
 			if (menu.Multiplayer.connection_path == 1) {
 				try {
-					server.address = server.address = "192.168.2.10:7771";
-					GUI.Button.draw("INFO", "CONNECTING TO " + singleplayer.server.address, Display.getWidth()/2-64 * 4, Display.getHeight()/2 - 246, 4, 1, "stonebrick", 3, 128);
+					server.address = server.address = "192.168.2.10";
+					GUI.Button.draw("INFO", "CONNECTING TO " + singleplayer.server.address, Display.getWidth()/2-64 * 4, Display.getHeight()/2 - 246, 6, 1, "stonebrick", 16, 128);
 					System.out.println("[INFO]: Connecting to " + singleplayer.server.address);
 					singleplayer.server.sendGet("http://" + server.address + "/index.php?field0=GET&&field1=player.online");
 					load = true;

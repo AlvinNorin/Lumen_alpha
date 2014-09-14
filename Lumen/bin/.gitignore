@@ -1,12 +1,4 @@
-/GUI/
-/_3D/
-/file/
-/game/
-/items/
-/level/
+/client/
 /menu/
-/object/
-/player/
 /singleplayer/
-/sound/
-/time/
+/GUI/

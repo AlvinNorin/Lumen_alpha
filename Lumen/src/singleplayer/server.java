@@ -37,7 +37,7 @@ public class server {
 	
 	public static String PLAYER_1_NAME = "PLAYER 1";
 	public static int PLAYER_1_X = 0;
-	public static String address = "85.226.186.137:7771";
+	public static String address = "192.168.2.10";
 	
 	private final static String USER_AGENT = "Mozilla/5.0";
  
